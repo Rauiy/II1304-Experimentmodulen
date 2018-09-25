@@ -63,7 +63,8 @@ void initiator(int e, int n)
 		
 	
 		int puts = 0, gets = 0;
-		for(int i = 0; i < n*2; i++)
+		int i;
+		for(i = 0; i < n*2; i++)
 		{
 			if(puts > n)
 			{
@@ -96,7 +97,8 @@ void initiator(int e, int n)
 		return;
 	}
 	// experiment 2 and 3 has the same order or operations, its the priority order that changes
-	for(int i = 0; i < n; i++)
+	int i;
+	for(i = 0; i < n; i++)
 	{
 		operations[i] = 0; // Start with puts
 		operations[i+n] = 1;	// Ends with gets
@@ -106,7 +108,8 @@ void initiator(int e, int n)
 	{
 		int c = 0;
 		int m = n;
-		for(int i = 0; i < n; i++)
+		int i;
+		for(i = 0; i < n; i++)
 		{
 			if(i%2==0) 
 			{
@@ -122,7 +125,8 @@ void initiator(int e, int n)
 	}
 	else if(e == 3) // Skewheap worst case
 	{		
-		for(int i = 0; i < n; i++)
+		int i;
+		for(i = 0; i < n; i++)
 		{
 			values[i] = i; 
 		}
@@ -131,7 +135,8 @@ void initiator(int e, int n)
 
 void experimentLL(int n)
 {
-	for(int i = 0; i < n*2; i++)
+	int i;
+	for(i = 0; i < n*2; i++)
 	{
 		if(operations[i])
 		{
@@ -148,7 +153,8 @@ void experimentLL(int n)
 
 void experimentLLPut(int n)
 {
-	for(int i = 0; i < n; i++)
+	int i;
+	for(i = 0; i < n; i++)
 	{
 		addElement(values[i],i);
 	}
@@ -156,7 +162,8 @@ void experimentLLPut(int n)
 
 void experimentLLGet(int n)
 {
-	for(int i = 0; i < n; i++)
+	int i;
+	for(i = 0; i < n; i++)
 	{
 		struct node *tmp= removeHead();
 		if(tmp != NULL)
@@ -166,7 +173,8 @@ void experimentLLGet(int n)
 
 void experimentSH(int n)
 {
-	for(int i = 0; i < n*2; i++)
+	int i;
+	for(i = 0; i < n*2; i++)
 	{
 		if(operations[i])
 		{
@@ -183,7 +191,8 @@ void experimentSH(int n)
 
 void experimentSHPut(int n)
 {
-	for(int i = 0; i < n; i++)
+	int i;
+	for(i= 0; i < n; i++)
 	{
 		addElementSH(values[i],i);
 	}
@@ -191,7 +200,8 @@ void experimentSHPut(int n)
 
 void experimentSHGet(int n)
 {
-	for(int i = 0; i < n; i++)
+	int i;
+	for(i = 0; i < n; i++)
 	{
 		struct node *tmp = removeHeadSH();
 		if(tmp != NULL)
@@ -202,7 +212,8 @@ void experimentSHGet(int n)
 void printResultExp(double times[], int n, int r)
 {
 	double sum = 0;
-	for(int i = 0; i < n; i++)
+	int i;
+	for(i = 0; i < n; i++)
 	{
 		sum += times[i];
 	}
@@ -215,7 +226,8 @@ void printResultExp(double times[], int n, int r)
 void printResultExp2(double times[], double times2[], int n, int r)
 {
 	double sum = 0, sum2 = 0;
-	for(int i = 0; i < n; i++)
+	int i;
+	for(i = 0; i < n; i++)
 	{
 		sum += times[i];
 		sum2 += times2[i];
@@ -245,7 +257,8 @@ void startExperiment(int alt)
 	{		
 		if(alt == 1)
 		{
-			for(int j = 0; j < c; j++)
+			int j;
+			for(j = 0; j < c; j++)
 			{	
 				initiator(alt, i); // New each run to maintain randomness
 				reset();
@@ -269,7 +282,8 @@ void startExperiment(int alt)
 		else 
 		{
 			initiator(alt, i); // New once
-			for(int j = 0; j < c; j++)
+			int j;
+			for(j = 0; j < c; j++)
 			{	
 				reset(); // make sure linked list is empty
 				gettimeofday(&start, NULL); // Measure executed time for put on linked list

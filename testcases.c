@@ -76,7 +76,8 @@ int main(int argc, char *argv[])
 {
 	// First test, testing put, no erros = successs
 	printf("Test1 (Inserting elements): Starting\n");
-	for(int i = 0; i < 10; i++)
+	int i;
+	for(i = 0; i < 10; i++)
 	{
 		addElementSH(test1[i],i+1);
 		addElement(test1[i],i+1);
@@ -94,7 +95,7 @@ int main(int argc, char *argv[])
 	// Second test, testing get, no errors and right sequence = successs
 	struct node *ll, *sh;
 	int res = 0;
-	for(int i = 0; i < 10; i++)
+	for(i = 0; i < 10; i++)
 	{
 		ll = removeHead();
 		sh = removeHeadSH();
@@ -131,7 +132,7 @@ int main(int argc, char *argv[])
 	res = 0;
 	printf("\n");
 	printf("Test3 (Mix): Starting\n");
-	for(int i = 0; i < 10; i++)
+	for(i = 0; i < 10; i++)
 	{
 		if(test3s1[i])
 		{

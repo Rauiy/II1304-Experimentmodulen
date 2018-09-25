@@ -70,8 +70,8 @@ void printNode(struct node *curr, int level)
 	if (curr == NULL){
 		return;
 	}
-	
-	for (int i = 0; i < level; i++)
+	int i;
+	for (i = 0; i < level; i++)
 	{
 		printf("  ");
 	}
